@@ -1,0 +1,13 @@
+.canvas-board {
+    height: 100%;
+    width: 100%;
+    background-color: #f7ebe809;
+    border-radius: 20px;
+    border: 1px solid var(--sauce);
+}
+
+.canvas-container {
+    height: 100%;
+    width: 100%;
+    cursor: crosshair;
+}
