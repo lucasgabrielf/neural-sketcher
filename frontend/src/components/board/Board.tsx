@@ -16,20 +16,35 @@ function Board() {
         }
     };
     
-    const saveDrawing = () => {
+    const saveDrawing = async () => {
         const canvas = canvasRef.current;
         if (canvas) {
             const link = document.createElement('a');
             link.download = 'drawing.png';
             link.href = canvas.toDataURL('image/png');
+            console.log(link)
+            console.log(link.href)
             link.click();
+
+            // const formData = new FormData();
+            // formData.append('file', link);
+
+            // try {
+            //     const response = await fetch('http://localhost:8000/save_image', {
+            //         method: 'POST',
+            //         body: formData,
+            //     });
+            //     console.log("Image sent to the server successfully!", response)
+            // } catch (error) {
+            //     console.log("The image was not sent to the server correctly!")
+            // }
         }
     };
     
     return (
         <section className="board-container">
             <div className="palette-container">
-                <h1 className="palette">NN Guesser</h1>
+                <h1 className="palette">Neural Sketcher!</h1>
                 <div className="toolbar">
                     <label htmlFor="color">Color</label>
                     <input id="color" name="color" type="color" value={color} onChange={(e) => setColor(e.target.value)} />

@@ -6,7 +6,7 @@ function HomePage() {
   const [message, setMessage] = useState('');
 
   useEffect(() => {
-    fetch('http://127.0.0.1:8000/api/data')
+    fetch('http://localhost:8000/data')
       .then(response => response.json())
       .then(data => {
         setMessage(data.message);

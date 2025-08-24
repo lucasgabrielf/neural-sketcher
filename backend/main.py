@@ -1,6 +1,7 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, UploadFile, File
 from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
+import shutil
 
 app = FastAPI()
 
@@ -16,6 +17,18 @@ app.add_middleware(
     allow_headers=["*"]
 )
 
-@app.get("/api/data")
-def get_data():
+@app.get("/data")
+async def get_data():
     return {"message": "Backend is working fine!"}
+
+# endpoint to post the images generated in the frontend server
+@app.post("/save_image/")
+async def save_image(file: UploadFile = File(...)):
+    print(f"Filename: {file.filename}")
+    print(f"Content type: {file.content_type}")
+
+    with open(f"sketches/{file.filename}", "wb") as buffer:
+        shutil.copyfileobj(file.file, buffer)
+
+    return {"filename": file.filename, "message": "File uploaded successfully"}
+
