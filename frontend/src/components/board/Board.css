@@ -32,8 +32,8 @@
 }
 
 .drawing-board {
-    width: 90%;
-    height: 70%;
+    width: 280px;
+    height: 280px;
 }
 
 #save {
