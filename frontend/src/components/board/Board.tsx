@@ -1,26 +1,42 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./Board.css"
 import Canvas from "../canvas/Canvas";
+import ProbCircle from "../probCircle/ProbCircle";
+import { useNavigate } from "react-router-dom";
 
 const MODEL_DIM = 28
 
 function Board() {
+    const getRandomInt = (max) => {
+        return Math.floor(Math.random() * max);
+    }
+
     const [color, setColor] = useState("#000000")
     const [lineWidth, setLineWidth] = useState(24)
     
     const canvasRef = useRef(null);
-    const [results, setResults] = useState("Please, draw a number from 0 to 9.");
+    const [results, setResults] = useState(["0", "0", "0", "0", "0", "0", "0", "0", "0", "0"]);
+    const [predNumber, setPredNumber] = useState("Model predicted the number is...");
+    const [guessNumber, setGuessNumber] = useState(getRandomInt(10));
+    const [tryAgain, setTryAgain] = useState(false);
     
     const clearCanvas = () => {
         const canvas = canvasRef.current;
         if (canvas) {
             const ctx = canvas.getContext('2d');
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-            setResults("Please, draw a number from 0 to 9.");
+            setResults(["0", "0", "0", "0", "0", "0", "0", "0", "0", "0"])
+            setPredNumber("Model predicted the number is...")
+        }
+        if(tryAgain===true){
+            setTryAgain(false);
+            setGuessNumber(getRandomInt(10));
         }
     };
 
+
     const saveDrawing = async () => {
+        setTryAgain(true);
         const canvas = canvasRef.current;
         if (canvas) {
             const link = document.createElement('a');
@@ -45,8 +61,10 @@ function Board() {
                 }
 
                 const result = await response.json();
-                console.log('Success:', result);
-                setResults(`The number is ${result.prediction}`);
+                setResults(result.predictions);
+                setPredNumber(`${result.predNumber}!  The correct number was ${guessNumber}.`)
+                console.log('Success:', results);
+
             }
             
             catch (error) {
@@ -69,10 +87,13 @@ function Board() {
         }
     };
     
+    const navigation = useNavigate();
+
     return (
         <section className="board-container">
+            <button className="go-home" onClick={()=>{navigation("/")}}>HOME</button>
             <div className="palette-container">
-                <h1 className="palette">Neural Sketcher!</h1>
+                <h1 className="palette">THE NUMBER IS: <span className="special-title">{guessNumber}</span></h1>
                 {/* <div className="toolbar">
                     <label htmlFor="color">Color</label>
                     <input id="color" name="color" type="color" value={color} onChange={(e) => setColor(e.target.value)} />
@@ -88,10 +109,22 @@ function Board() {
                 />
             </div>
             <div className="buttons-container">
-                <button id="clear" onClick={clearCanvas}>Clear</button>
-                <button id="save" onClick={saveDrawing}>Save</button>
+                <button id="clear" onClick={clearCanvas}>{tryAgain===false ? "CLEAR":"TRY AGAIN!"}</button>
+                <button id="save" onClick={saveDrawing} disabled={tryAgain}>IT'S DONE!</button>
             </div>
-            <div>{results}</div>
+            <p className="probs-text">{predNumber}</p>
+            <div className="probs-container">
+                <ProbCircle number={0} level={ results[0] } />
+                <ProbCircle number={1} level={ results[1] } />
+                <ProbCircle number={2} level={ results[2] } />
+                <ProbCircle number={3} level={ results[3] } />
+                <ProbCircle number={4} level={ results[4] } />
+                <ProbCircle number={5} level={ results[5] } />
+                <ProbCircle number={6} level={ results[6] } />
+                <ProbCircle number={7} level={ results[7] } />
+                <ProbCircle number={8} level={ results[8] } />
+                <ProbCircle number={9} level={ results[9] } />
+            </div>
         </section>
     )
 }

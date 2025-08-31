@@ -1,9 +1,9 @@
 .canvas-board {
     height: 100%;
     width: 100%;
-    background-color: #f7ebe809;
+    background-color: #eaeaea;
+    box-shadow: 0px 4px 25px 1px rgba(0, 0, 0, 0.253);
     border-radius: 20px;
-    border: 1px solid var(--sauce);
 }
 
 .canvas-container {

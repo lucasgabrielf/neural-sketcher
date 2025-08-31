@@ -1,11 +1,10 @@
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: "DM Sans", sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color: #3A3A3A;
+  background-color: #EAEAEA;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -13,9 +12,9 @@
   -moz-osx-font-smoothing: grayscale;
   --prim: #1e1e24;
   --sec: #444140;
-  --text: #f7ebe8;
-  --main: #E54B4B;
-  --sauce: #FFA987;
+  --text: #3A3A3A;
+  --main: #023059;
+  --sauce: #1B618C;
 }
 
 a {
@@ -32,9 +31,7 @@ body {
   min-width: 320px;
   min-height: 100vh;
   padding: 0px;
-  overflow: hidden;
-  color: var(--text);
-  background-color: var(--prim);
+  overflow-x: hidden;
 }
 
 
@@ -61,6 +58,12 @@ button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
+
+button:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
 
 @media (prefers-color-scheme: light) {
   :root {

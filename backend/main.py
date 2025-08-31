@@ -1,4 +1,4 @@
-from fastapi import FastAPI, UploadFile, File
+from fastapi import FastAPI
 from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
 import numpy as np
@@ -63,8 +63,11 @@ async def save_image(data: LinkData):
             print(f"An error occurred during {e}")
             prediction = None
 
+        levels = [round(float(100*i), 1) for i in predictions.tolist()[0]]
+        print(levels)
+
         status = "Success" if prediction else "Fail"
 
-        return {"status": status, "filename": data_name, "prediction": prediction}
+        return {"status": status, "filename": data_name, "predictions": levels, "predNumber": prediction}
     except Exception as e:
         print(f"error {e}")

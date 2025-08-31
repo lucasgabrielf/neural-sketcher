@@ -1,5 +1,23 @@
+.go-home {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    padding: 2px;
+    border-radius: 8px;
+    border: none;
+    color: #eaeaea;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: var(--sauce);
+    width: auto;
+    height: 50px;
+    
+    &:hover {
+        background-color: #2278ad;
+    }
+}
+
 .palette {
-    color: var(--sauce);
     font-size: 2.4rem;
     text-align: center;
 }
@@ -34,6 +52,7 @@
 .drawing-board {
     width: 280px;
     height: 280px;
+    margin-bottom: -25px;
 }
 
 #save {
@@ -41,18 +60,17 @@
     margin-top: 0px;
     margin-bottom: 0px;
     padding: 2px;
-    border-radius: 4px;
+    border-radius: 8px;
     border: none;
-    color: var(--sauce);
+    color: #eaeaea;
     padding-left: 20px;
     padding-right: 20px;
-    background-color: var(--sec);
-    width: 200px;
-    height: 30px;
+    background-color: var(--sauce);
+    width: auto;
+    height: 50px;
     
     &:hover {
-        background-color: var(--sauce);
-        color: var(--prim);
+        background-color: #2278ad;
     }
 }
 
@@ -61,18 +79,17 @@
     margin-top: 0px;
     margin-bottom: 0px;
     padding: 2px;
-    border-radius: 4px;
+    border-radius: 8px;
     border: none;
-    color: var(--sauce);
+    color: #eaeaea;
     padding-left: 20px;
     padding-right: 20px;
-    background-color: var(--sec);
-    width: 200px;
-    height: 30px;
+    background-color: #8B8B8B;
+    width: auto;
+    height: 50px;
 
     &:hover {
-        background-color: var(--sauce);
-        color: var(--prim);
+        background-color:#9f9f9f;
     }
 }
 
@@ -83,4 +100,18 @@
 
 #lineWidth {
     height: 25px;
+}
+
+.probs-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 60vw;
+}
+
+.probs-text {
+    font-weight: 800;
+    margin: 0px;
+    margin-bottom: -24px;
 }
