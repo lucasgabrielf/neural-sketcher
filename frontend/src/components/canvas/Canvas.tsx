@@ -48,7 +48,6 @@ function Canvas({ canvasRef, color, lineWidth }) {
 
     const stopDrawing = () => {
         if (!isDrawing) return;
-        contextRef.current.closePath();
         setIsDrawing(false);
     };
 
@@ -56,14 +55,9 @@ function Canvas({ canvasRef, color, lineWidth }) {
         if (!isDrawing) {
             return;
         }
-        
-        window.requestAnimationFrame(() => {
-            if (isDrawing && contextRef.current) {
-                const { offsetX, offsetY } = getCoordinates(nativeEvent);
-                contextRef.current.lineTo(offsetX, offsetY);
-                contextRef.current.stroke();
-            }
-        });
+        const { offsetX, offsetY } = getCoordinates(nativeEvent);
+        contextRef.current.lineTo(offsetX, offsetY);
+        contextRef.current.stroke();
     };
 
     const getCoordinates = (event) => {

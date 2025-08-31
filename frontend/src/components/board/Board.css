@@ -115,3 +115,37 @@
     margin: 0px;
     margin-bottom: -24px;
 }
+
+/* --- Smartphone Adjustments (screens 768px or smaller) --- */
+@media (max-width: 768px) {
+
+    .go-home {
+        top: 15px;
+        left: 15px;
+        height: 40px;
+        padding: 2px 15px;
+    }
+
+    .palette {
+        font-size: 1.8rem;
+        margin-top: 70px;
+    }
+
+    .drawing-board {
+        margin-bottom: 15px;
+    }
+
+    .probs-container {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 2px 5px;
+        width: 90vw;
+        gap: 15px; 
+    }
+
+    .probs-text {
+        margin-bottom: 10px;
+    }
+
+}

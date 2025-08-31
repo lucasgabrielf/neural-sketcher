@@ -57,6 +57,8 @@ async def save_image(data: LinkData):
 
         predictions = model.predict(data_path)
 
+        os.remove(data_path)
+
         try:
             prediction = int(np.argmax(predictions))
         except Exception as e:
