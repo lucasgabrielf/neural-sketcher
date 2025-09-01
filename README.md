@@ -8,9 +8,9 @@ In the game, the user is prompted to draw an element of the everyday-life, and i
 </p>
 
 <div style="width: 100vw; display: flex; justify-content: center; flex-direction: row; align-items: center;">
-  <img width="333" alt="image" src="https://github.com/user-attachments/assets/776dd26d-902e-4818-b475-9705431a7a04" />
-  <img width="333" alt="image" src="https://github.com/user-attachments/assets/05ed92cd-bc36-44c8-8034-b68fb7bd1e59" />
-  <img width="333" alt="image" src="https://github.com/user-attachments/assets/15d88d26-f1f1-4d7b-b32c-51c04e39d9dd" />
+  <img width="300" alt="image" src="https://github.com/user-attachments/assets/776dd26d-902e-4818-b475-9705431a7a04" />
+  <img width="300" alt="image" src="https://github.com/user-attachments/assets/05ed92cd-bc36-44c8-8034-b68fb7bd1e59" />
+  <img width="300" alt="image" src="https://github.com/user-attachments/assets/15d88d26-f1f1-4d7b-b32c-51c04e39d9dd" />
 </div>
 
 
