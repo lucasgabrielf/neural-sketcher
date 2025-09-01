@@ -4,7 +4,7 @@ In the game, the user is prompted to draw an element of the everyday-life, and i
 
 Playing neural sketcher:
 <p align="center">
-  <img width="400" src="https://github.com/user-attachments/assets/d0119f05-3cfe-4d61-82d1-fa87fab6ad4a" alt="Neural Sketcher Gif" />
+  <img width="600" src="https://github.com/user-attachments/assets/d0119f05-3cfe-4d61-82d1-fa87fab6ad4a" alt="Neural Sketcher Gif" />
 </p>
 
 <div style="width: 100vw; display: flex; justify-content: center; flex-direction: row; align-items: center;">
