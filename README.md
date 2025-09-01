@@ -4,14 +4,17 @@ In the game, the user is prompted to draw an element of the everyday-life, and i
 
 ## Playing neural sketcher:
 <p align="center">
+  <img width="600" alt="image" src="https://github.com/user-attachments/assets/776dd26d-902e-4818-b475-9705431a7a04" />
+</p>
+<p align="center">
+  <img width="600" alt="image" src="https://github.com/user-attachments/assets/05ed92cd-bc36-44c8-8034-b68fb7bd1e59" />
+</p>
+<p align="center">
+  <img width="600" alt="image" src="https://github.com/user-attachments/assets/15d88d26-f1f1-4d7b-b32c-51c04e39d9dd" />
+</p>
+<p align="center">
   <img width="600" src="https://github.com/user-attachments/assets/d0119f05-3cfe-4d61-82d1-fa87fab6ad4a" alt="Neural Sketcher Gif" />
 </p>
-
-<div style="width: 100vw; display: flex; justify-content: center; flex-direction: row; align-items: center;">
-  <img width="300" alt="image" src="https://github.com/user-attachments/assets/776dd26d-902e-4818-b475-9705431a7a04" />
-  <img width="300" alt="image" src="https://github.com/user-attachments/assets/05ed92cd-bc36-44c8-8034-b68fb7bd1e59" />
-  <img width="300" alt="image" src="https://github.com/user-attachments/assets/15d88d26-f1f1-4d7b-b32c-51c04e39d9dd" />
-</div>
 
 
 
